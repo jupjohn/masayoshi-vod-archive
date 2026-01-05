@@ -46,8 +46,8 @@ await app.InitializeAuthenticationAsync(app.Lifetime.ApplicationStopping);
 app.Run();
 
 // TODO:
-//   - admin page
 //   - disk metadata & src loading
+//   - admin page (part 2)
 //   - VOD listing page (at root, and with "sign in with Twitch" button when not authed)
 //   - video serving (byte range + auth etc.)
 //   - VOD player page (videojs.org)
