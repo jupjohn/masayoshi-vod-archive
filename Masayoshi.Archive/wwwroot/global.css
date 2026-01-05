@@ -1,0 +1,49 @@
+:root {
+    --pico-font-size: 110%;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+}
+
+header {
+    margin-top: 2rem;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.header-text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.theme-toggle-icon {
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+html[data-theme=light] .theme-toggle-icon#theme-dark {
+    display: none;
+}
+
+html[data-theme=dark] .theme-toggle-icon#theme-light {
+    display: none;
+}
+
+.header-logo {
+    width: 5rem;
+    aspect-ratio: 1 / 1;
+    margin-right: 1rem;
+}

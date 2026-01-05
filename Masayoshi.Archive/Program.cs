@@ -1,25 +1,41 @@
 using FastEndpoints;
 using Masayoshi.Archive;
+using Masayoshi.Archive.Generic;
+using Masayoshi.Archive.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors();
 builder.Services.AddFastEndpoints(options =>
 {
     options.DisableAutoDiscovery = true;
     options.SourceGeneratorDiscoveredTypes = DiscoveredTypes.All;
 });
 
+builder.AddHostingFeatures();
+
 var app = builder.Build();
+
+app.UseCors(policyBuilder =>
+{
+    var options = app.Services.GetRequiredOptions<HostingOptions>().Value;
+    policyBuilder
+        .WithOrigins(options.PublicSiteUri.ToString())
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+});
 
 app.UseFastEndpoints(config =>
 {
     config.Binding.ReflectionCache.AddFromMasayoshiArchive();
 });
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.Run();
 
 // TODO:
-//   - static site files + htmx
 //   - efcore sqlite
 //   - twitch auth
 //   - admin page
