@@ -9,11 +9,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.4.0" />
       <PackageReference Include="FastEndpoints" Version="7.1.1" />
       <PackageReference Include="FastEndpoints.Generator" Version="7.1.1">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="FastEndpoints.Security" Version="7.1.1" />
+      <PackageReference Include="Intellenum" Version="2.0.1" />
+      <PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="10.0.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.1" />
+      <PackageReference Include="OpenIddict.AspNetCore" Version="7.2.0" />
+      <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="7.2.0" />
     </ItemGroup>
 
 </Project>

@@ -686,3 +686,9 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/rider,intellij+all,visualstudio,visualstudiocode,aspnetcore,dotnetcore
+
+# Start of user-defined section
+
+*.db
+
+# End of user-defined section
