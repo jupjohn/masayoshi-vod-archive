@@ -2,5 +2,5 @@
   <Folder Name="/Utility/">
     <Project Path="utility/Masayoshi.Archive.DatabaseMigrator/Masayoshi.Archive.DatabaseMigrator.csproj" />
   </Folder>
-  <Project Path="Masayoshi.Archive/Masayoshi.Archive.csproj" />
+  <Project Path="src/Masayoshi.Archive/Masayoshi.Archive.csproj" />
 </Solution>

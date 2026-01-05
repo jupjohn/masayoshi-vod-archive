@@ -29,7 +29,7 @@ In the directory of the project you wish to migrate, call the `dotnet-ef` tool w
 [source,shell]
 ----
 # Example migration for the OpenIddict DB. Change the migration name, output directory, context name, and relative startup path to suit you
-dotnet ef migrations add SeedOpenIddict -o Authentication/Migrations -c AuthenticationDbContext -s ../utility/Masayoshi.Archive.DatabaseMigrator/
+dotnet ef migrations add SeedOpenIddict -o Authentication/Migrations -c AuthenticationDbContext -s ../../utility/Masayoshi.Archive.DatabaseMigrator/
 ----
 
 == File layout on disk
