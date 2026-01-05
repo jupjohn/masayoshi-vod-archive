@@ -8,4 +8,12 @@
         <UserSecretsId>Masayoshi.Archive-dev-a44a15b2-998a-4bdc-806e-6e243f956044</UserSecretsId>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FastEndpoints" Version="7.1.1" />
+      <PackageReference Include="FastEndpoints.Generator" Version="7.1.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
 </Project>

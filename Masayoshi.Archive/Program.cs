@@ -1,13 +1,24 @@
+using FastEndpoints;
+using Masayoshi.Archive;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddFastEndpoints(options =>
+{
+    options.DisableAutoDiscovery = true;
+    options.SourceGeneratorDiscoveredTypes = DiscoveredTypes.All;
+});
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello world!");
+app.UseFastEndpoints(config =>
+{
+    config.Binding.ReflectionCache.AddFromMasayoshiArchive();
+});
 
 app.Run();
 
 // TODO:
-//   - fast endpoints
 //   - static site files + htmx
 //   - efcore sqlite
 //   - twitch auth
