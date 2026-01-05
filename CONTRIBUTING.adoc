@@ -1,0 +1,45 @@
+= Contributing
+
+== Setting up a development environment
+
+Most of this project is ready-to-run, but there are a few pieces of config you'll need to add.
+
+=== Twitch application registration
+
+The development app credentials aren't included in this repository, so you will need to create your own Twitch application in the https://dev.twitch.tv/console/apps/create[Twitch Developer Console].
+
+- Name: _Whatever you want_
+- OAuth Redirect URLs: `\https://localhost:7228/auth/callback/twitch` (_if this port is incorrect, check launchSettings.json_)
+- Category: `Website Integration`
+- Client Type: `Confidential`
+
+Once you've created the registration, copy down the Client ID & Client Secret.
+
+=== User secrets
+
+The following config items needs to be present in your user secrets:
+
+1. `Authentication:Twitch:ClientId` - your client ID from Twitch
+2. `Authentication:Twitch:ClientSecret` - your client secret from Twitch
+
+== Migrating Entity Framework DbContexts
+
+In the directory of the project you wish to migrate, call the `dotnet-ef` tool with the `Masayoshi.Archive.DatabaseMigrator` as the startup project:
+
+[source,shell]
+----
+# Example migration for the OpenIddict DB. Change the migration name, output directory, context name, and relative startup path to suit you
+dotnet ef migrations add SeedOpenIddict -o Authentication/Migrations -c AuthenticationDbContext -s ../utility/Masayoshi.Archive.DatabaseMigrator/
+----
+
+== File layout on disk
+
+// TODO(jupjohn): write this up, including metadata format
+
+[source]
+----
+// where `n` is the VOD id
+.
+├── n-meta.json
+└── n.mp4
+----
